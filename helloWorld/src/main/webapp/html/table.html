@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table.html</title>
+
+</head>
+
+<body>
+    <a href="#hong">홍길동의 자기소개</a>
+    <a href="#frequent">자주가는 사이트</a>
+
+    <h3>학생 점수</h3>
+    <table border="10">
+
+        <thead>
+            <tr>
+                <th>title 부분</th>
+                <td><b>이름</b></td>
+                <td>영어</td>
+                <td>수학</td>
+                <td>합계</td>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <th rowspan="3">data부분</th>
+                <td>홍길동 </td>
+                <td>80</td>
+                <td>70</td>
+                <td>150</td>
+
+            </tr>
+            <tr>
+
+                <td>김민수 </td>
+                <td>85</td>
+                <td>77</td>
+                <td>162</td>
+
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>footer부분</th>
+                <td colspan="4">3학년 9반 점수리스트</td>
+
+            </tr>
+        </tfoot>
+
+    </table>
+    <br>
+    <table border="10" id="hong">
+
+        <tbody>
+            <tr>
+                <td>이름</td>
+                <td>홍길동</td>
+                <td>연락처</td>
+                <td>010-1234-5678</td>
+                <td>사진</td>
+            </tr>
+
+
+            <tr>
+
+                <td>주소 </td>
+                <td colspan="3">대구 중구 중앙대로길 100</td>
+                <td rowspan="2"><a href="../profile/hong.html"><img width="100px" src="../img/hong.PNG"
+                            alt="홍길동의 사진"></a></td>
+            </tr>
+
+            <tr>
+                <td>자기소개</td>
+                <td colspan="3">프로그램을 공부하는 학생</td>
+
+            </tr>
+        </tbody>
+
+    </table>
+    <figcaption style="padding-left: 25%;">자기소개 끝!!!</figcaption>
+    <br>
+    <table border="1" id="frequent">
+        <caption>자주가는 사이트↓</caption>
+        <thead>
+            <tr>
+                <th>사이트명</th>
+                <th>URL</th>
+                <th>설명</th>
+                <th>로고</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>다음</th>
+                <td><a href="https://www.daum.net">www.daum.net</a></td>
+                <td>다음 사이트 주소</td>
+                <td><a href="https://www.daum.net"><img src="../img/daum.PNG" alt="다음 로고" width="90px"></a></td>
+
+            </tr>
+            <tr>
+                <th>구글</th>
+                <td><a href="https://www.google.com">www.google.com</a></td>
+                <td>구글 주소</td>
+                <td><a href="https://www.google.com"><img src="../img/google.PNG" alt="구글 로고" width="90px"></a></td>
+            </tr>
+            <tr>
+                <th>네이버</th>
+                <td><a href="https://www.naver.com">www.naver.com</a></td>
+                <td>네이버 주소</td>
+                <td><a href="https://www.naver.com"><img src="../img/naver.PNG" alt="네이버 로고" width="90px"></a></td>
+            </tr>
+        </tbody>
+        <a href="http://127.0.0.1:5500/src/main/webapp/html/table.html">Top...</a>
+    </table>
+    <a href="http://127.0.0.1:5500/src/main/webapp/html/table.html">Top...</a>
+    <a href="../AddBankMemberServlet?id=user1&pw=1234&name=김사용&role=0">bank멤버 추가하기.</a>
+    <a href="https://developer.mozilla.org/ko/docs/Web/HTML#key_resources" target="_blank">mdn의 중요한 자료</a>
+    <a href="https://developer.mozilla.org/ko/docs/Web/HTML#beginners_tutorials" target="_blank">mdn의 초보자 학습서</a>
+   
+    <p> Lorem</p><br> ipsum dolor sit amet consectetur 
+    <br> adipisicing elit.
+    <br> Hic sequi fugiat ut ipsum voluptas neque
+    <br> praesentium assumenda error
+    <br> est eum labore animi, iste sit facere, nesciunt adipisci
+    <br> reiciendis, in at!
+</body>
+
+</html>
