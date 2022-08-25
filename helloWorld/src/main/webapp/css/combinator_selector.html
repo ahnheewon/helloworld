@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css/combinator_selector</title>
+    <style>
+        div>p {
+            /* div를 기준으로 자식 p */
+            color: red;
+        }
+
+        /*    div p {  div의 하위 모든 p 
+            color: red;
+        }*/
+        p+span {
+            /* +는 동일한 선상인 경우 사용(부모자식관계x) 
+                  =>  p를 기준으로 인접한 span만 */
+            background-color: yellow;
+            border: 1px solid;
+            color: greenyellow;
+            /* span에 포함된 p3까지 변하는 것을 알 수 있다. */
+        }
+
+        p~span {
+            /* p태그 형제(sibling) 태그 */
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Heading</h1> <!-- h1{Heading} 후 엔터 -->
+
+    <div>
+        <!-- div>p*3 후 엔터 -->
+        <p></p>
+        <p></p>
+        <p></p>
+    </div>
+
+    <div>
+        <!--  div>p+span.first 후 엔터  -->
+        <p></p>
+        <span class="first"></span>
+    </div>
+
+    <div>
+        <!-- div>p{p1}+p{p2}+span>p{p3} 후 엔터 -->
+        <p>p1</p> <!-- 자식 -->
+        <p>p2</p> <!-- 자식 -->
+        <span>
+            <p>p3</p> <!-- 자손 -->
+        </span>
+        <br>
+        <span>
+            span1
+        </span>
+        <div>div</div>
+        <span>
+            span2
+        </span>
+    </div>
+    <p>p4</p>
+
+</body>
+
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css/table_corona.html</title>
+    <style>
+        body {
+            font-size: large;
+        }
+        hr {
+            margin: 0px;
+        }
+
+        table {
+            border: 1px solid black;
+            border-collapse: collapse;
+            width:50%;
+          
+        }
+
+        #a td {
+             text-align: center; 
+             font-weight: bold;
+             padding: 0 0px;
+             padding: 5px 0;
+            color: black;
+            background-color: rgb(240, 240, 240);
+        }
+
+
+        #b1 td, #b2 td {
+             text-align: center; 
+             font-weight: bold;
+             padding: 5px 0;
+             padding: 0 20px;
+            color: black;
+            background-color: rgb(240, 240, 240);
+        }
+        table th {
+            border: 1px solid black;   
+            padding: 0 20px;
+            text-align: center;
+            color: black;
+            background-color: rgb(240, 240, 240);
+          
+            /* 가운데 정렬 */
+        }
+
+        table td {
+            border: 1px solid black;
+            text-align:right;
+            padding-right: 10px;
+        }
+
+        tr.sum {
+            border-bottom: 1.5px dotted blue;
+            color: blue;
+            font-weight: bold;
+            background-color: rgb(214, 236, 255);
+        }
+
+
+
+  #A {
+    background-color: red;
+    color: white;
+    width: 25px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  #B {
+    background-color:blue;
+    color: white;
+    display: inline-block;
+    width: 25px;
+    border-radius: 50%;
+  }
+
+
+    </style>
+</head>
+
+<body>
+    <h2>시도별 일일 접종 현황</h2>
+    <hr>
+    <br>
+    <div>
+        <p style="font-size: large; font-weight: bold;">접종실적 총괄
+            <span style="font-size: small;">(08.25.,00시 기준)<span>
+                    <p>
+                        <table id="t1">
+                            <tr id="a">
+                                <th>구분
+                                <td>1차접종</td>
+                                <td>2차접종</td>
+                                <td>3차접종</td>
+                                <td>4차접종</td>
+                            </tr>
+                            <tr>
+                                <th>당일 누적 <span id="A"> A </span> + <span id="B"> B </span></th>
+                                <td>45,101,931</td>
+                                <td>44,664,114</td>
+                                <td>33,539,624</td>
+                                <td>7,000,206</td>
+                            </tr>
+                            <tr>
+                                <th>당일 실적 <span id="A"> A </span></th>
+                                <td>380</td>
+                                <td>336</td>
+                                <td>2,305</td>
+                                <td>32,088</td>
+                            </tr>
+                            <tr>
+                                <th>전일 누적 <span id="B"> B </span></th>
+                                <td>45,101,551</td>
+                                <td>44,663,778</td>
+                                <td>33,537,319</td>
+                                <td>6,968,118</td>
+                            </tr>
+
+
+
+                        </table>
+
+                        <p style="font-size: large; font-weight: bold;">시도별 접종 현황
+
+                            <p>
+
+                                <table  id="t2">
+                                    <tr id="b1">
+                                        <th rowspan="2">구분</th>
+                                        <td colspan="2">1차접종</td>
+                                        <td colspan="2">2차접종</td>
+                                        <td colspan="2">3차접종</td>
+                                        <td colspan="2">4차접종</td>
+                                    </tr>
+                                    <tr id="b2">
+                                        <td>당일실적</td>
+                                        <td>당일누계</td>
+                                        <td>당일실적</td>
+                                        <td>당일누계</td>
+                                        <td>당일실적</td>
+                                        <td>당일누계</td>
+                                        <td>당일실적</td>
+                                        <td>당일누계</td>
+
+                                    </tr>
+                                    <tr class="sum">
+                                        <th >합계</th>
+                                        <td>380</td>
+                                        <td>45,101,931</td>
+                                        <td>336</td>
+                                        <td>44,664,114</td>
+                                        <td>2,305</td>
+                                        <td>33,539,624</td>
+                                        <td>32,088</td>
+                                        <td>7,000,206</td>
+                                    </tr>
+                                    <tr>
+                                        <th>서울</th>
+                                        <td>72</td>
+                                        <td>8,340,082</td>
+                                        <td>68</td>
+                                        <td>8,260,864</td>
+                                        <td>506</td>
+                                        <td>6,049,408</td>
+                                        <td>5,590</td>
+                                        <td>1,165,344</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>대구</th>
+                                        <td>16</td>
+                                        <td>2,019,190</td>
+                                        <td>10</td>
+                                        <td>1,996,236</td>
+                                        <td>115</td>
+                                        <td>1,401,388</td>
+                                        <td>1,089</td>
+                                        <td>248,607</td>
+                                    </tr>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,6 @@
+{
+    "workbench.iconTheme": "vs-minimal",
+    "workbench.colorTheme": "Shades of Purple",
+    "typescript.inlayHints.enumMemberValues.enabled": true,
+    "window.autoDetectColorScheme": false
+}

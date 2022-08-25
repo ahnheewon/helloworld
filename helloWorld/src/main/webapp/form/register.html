@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+</head>
+<style>
+    form {
+        border: 3px dotted violet;
+        padding: 20px;
+        width: 55%;
+        margin: auto;
+        /*좌우여백 동일하게 맞춰줌.*/
+    }
+
+    ul {
+        list-style-type: none;
+        /* list 점 안보이게 */
+
+    }
+
+    label {
+        width: 100px;
+        /* 인라인이라서 적용해도 안보임*/
+        display: inline-block;
+        padding-right: 1px;
+    }
+
+    input {
+        width: 15%;
+
+    }
+
+    input[type='number'] {
+
+        width: 10%;
+    }
+
+    label[class='s'] {
+       
+        font-size: 0.8em;
+    }
+
+    li {
+        padding: 3px;
+    }
+
+    div {
+        text-align: center;
+    }
+
+    /* fieldset {
+    width:600px;
+} */
+</style>
+
+<body>
+    <form>
+        <hr>
+        <h3>회원정보입력</h3>
+        <hr>
+        <fieldset>
+            <legend>로그인 정보</legend>
+            <ul>
+                <li>
+                    <label for="name">이름 </label>
+                    <input type="text" name="name" id="name" required>
+                    <br>
+                <li>
+                <li>
+                    <label for="id">아이디</label>
+                    <input type="text" name="id" id="id" required>
+                    <input type="button" value="중복확인">
+                    <br></li>
+                <li>
+                    <label for="password">비밀번호 </label>
+                    <input type="password" name="pw" id="pw" required>
+                    <span style="font-size: 0.8em;">비밀번호는 4~16자로 입력해주세요.</span>
+                    <br></li>
+                <li>
+                    <label for="password2">비밀번호확인 </label>
+                    <input type="password" name="pw2" id="pw2" required>
+                    <br></li>
+
+                <li>
+                    <label for="user">생일/성별</label>
+                    <!-- <input type="date" name="birth" id="birth"> -->
+                    <input type="number" name="year" id="year" required>
+                    <span>년</span>
+                    <input type="number" name="month" id="month" required>
+                    <span>월</span>
+                    <input type="number" name="day" id="day" required>
+                    <span>일</span>
+                    <label><input type="radio" name="s" id="male" for="male">남</label>
+                    <label><input type="radio" name="s" id="female" for="female">여</label>
+                    <br></li>
+
+                <label for="admin">이메일</label>
+                <input type="text" name="mailId" id="" required>
+                @
+                <select name="email">
+                    <optgroup label="선택하세요.">
+                        <option value="">선택</option>
+                        <option value="네이버">naver.com</option>
+                        <option value="구글">gmail.com</option>
+                        <option value="다음">daum.net</option>
+                    </optgroup>
+                </select>
+                <input type="button" value="중복확인">
+                <br></li>
+                <li>
+                    <label for="tel">휴대폰</label>
+                    <select id="phone">
+                        <optgroup label="선택하세요.">
+                            <option value="010">010</option>
+                            <option value="011">011</option>
+                    </select>
+                    <span>-</span>
+                    <input type="number" name="phone" id="phone" required>
+                    <span>-</span>
+                    <input type="number" name="phone" id="phone2" required>
+                    <br></li>
+
+                <li>
+                    <label for="name">추천인 </label>
+                    <input type="text" name="name" id="name">
+                    <input type="button" value="추천인 검색">
+                    <br>
+                <li>
+
+                <li>
+                    <label for="tel">뉴스메일</label>
+                    <label class="s"><input type="radio" name="mailing" value="news">수신동의</label>
+                    <label class="s"><input type="radio" name="mailing" value="news">수신거부</label>
+
+                <li>
+                <li>
+                    <label for="tel">SMS안내</label>
+                    <label class="s"><input type="radio" name="sms" value="sms">수신동의</label>
+                    <label class="s"><input type="radio" name="sms" value="sms">수신거부</label>
+
+                <li>
+                <li>
+                    <label for="tel">앱PUSH알림</label>
+                    <label class="s"><input type="radio" name="appPush" value="app">수신동의</label>
+                    <label class="s"><input type="radio" name="appPush" value="app">수신거부</label>
+
+
+            </ul>
+
+        </fieldset>
+
+
+        <br>
+        <div>
+            <input type="image" src="../img/ok.PNG" alt="">
+            <input type="image" src="../img/취소.PNG" alt="">
+            <!-- <input type="submit" value="가입하기">   <input type="submit" value="취소"> -->
+        </div>
+    </form>
+</body>
+
+</html>

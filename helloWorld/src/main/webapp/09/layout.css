@@ -1,0 +1,96 @@
+section {
+    background-color: white;
+}
+
+
+body {
+    background-color: black;
+    margin-top: 0;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+
+header {
+    height: 500%;
+    background-color: rgb(18, 18, 124);
+    color: white;
+    padding: 5px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    overflow: hidden;
+
+}
+
+header>h1 {
+    width: 35%;
+    float: left;
+    /* 왼쪽에 떠있게 */
+
+}
+
+header>nav {
+    width: 65%;
+
+}
+
+nav>ul>li {
+    display: inline-block;
+}
+
+nav>ul>li>a {
+    color:white;
+    text-decoration-line: none;
+}
+
+article {
+    width: 90%;
+    height:auto;
+}
+#pet1 {
+    border-style: solid;
+    padding: 20px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+
+article>dl>dt {
+    color: purple;
+    font-weight: bold;}
+
+#pet2 {
+    border:3px solid;
+    border-radius: 20px;
+    border-color: plum;
+    padding: 20px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#pet3 {
+    border:3px solid;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-color: green;
+    padding: 20px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+aside {
+    padding-bottom: 60px;
+    padding-top: 60px;
+    padding-left: 40px;
+    width: 85%;
+
+}
+
+section {
+    padding-top: 5px;
+    
+}

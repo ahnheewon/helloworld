@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css/struct_selector2.html</title>
+</head>
+<style>
+    /* 구조적 가상 선택자 */
+    p:nth-child(1) { /*  */
+        color: red;
+        
+    }
+
+    div>p:nth-of-type(2n) { /* p태그 중에서 순번을 카운트 */
+        color: orangered
+    }
+    div>p:nth-last-of-type(2n) {
+        border: 1px solid green;
+    }
+    div>p:first-of-type { /* 첫번째 타입 */
+        background-color: aqua;
+    }
+    div>p:last-of-type {
+        background-color: bisque;
+    }
+
+    /* input[type='text'], input[type='email'] {
+
+        background-color:pink;
+    } input중 에서 복수 선택 */
+
+    input:not([type='password']){
+        background-color: yellow;
+    }
+    
+</style>
+
+<body>
+
+    <h3>Espresso</h3>
+    <p>Americano</p>
+    <p>Caffe Latte</p>
+    <h4>Caffe Mocha</h4>
+    <p>Cappuccino</p>
+
+    <div>
+        <h3>Espresso</h3>
+        <p>Americano</p>
+        <p>Caffe Latte</p>
+        <h4>Caffe Mocha</h4>
+        <p>Cappuccino</p>
+    </div>
+
+    <input type="text" value="Text">
+    <input type="email" value="email">
+    <input type="password" value="1234">
+
+</body>
+
+</html>

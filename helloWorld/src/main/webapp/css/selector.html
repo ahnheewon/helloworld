@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css/selector.html</title>
+    <style>
+        * { /* 전체 선택자 아스타 */
+            color: red;
+        }
+        p {
+            color: blue;
+        }
+        p#p1 { /* id값이 p1인 p, id는 고유해서 그냥 #p1이라고만 적어도 됨. */
+            font-size: large;
+        }
+        #p2 {
+            background-color: yellow;
+        }
+        div.container { /* class 값이 container인 div */
+            border: 1px solid green;
+        }
+        ul.container {/* class 값이 container인 ul */
+            list-style-type: none;
+        }
+        
+    </style>
+</head>
+<body>
+    hello
+    <h1>Heading</h1>
+    <div class="container">
+        <p id="p1">p1</p>
+        <p id="p2">p2</p>
+    </div>
+        <p>p3</p>
+        <ul class="container">
+            <li>Apple</li>
+            <li>Banana</li>
+        </ul>
+</body>
+</html>

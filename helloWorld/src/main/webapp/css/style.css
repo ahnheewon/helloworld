@@ -1,0 +1,21 @@
+/* style.css */
+h3:nth-last-of-type(1) { /* 뒤에서 부터 카운트 -> 뒤에서 첫번째에만 적용 */
+    background-color: beige;
+    color: red;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+body {
+    font-size: 20px; /* 기본픽셀은 16픽셀이다. */
+}
+
+h2 {
+    color: blue;
+}
+
+p {
+    font-size:0.9em; /* em 단위는 기본폰트의 크기가 바뀌면 배열에 맞게 변한다. */
+    /* px는 고정값이라 변하지 않는다. */
+    line-height: 2.0; /* 글자 아래위로의 여백 */
+}

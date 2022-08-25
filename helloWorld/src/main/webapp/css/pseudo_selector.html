@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css/pseudo_selector.html</title>
+    <style>
+        /* 가상선택자: 어떤 상태가 되면,,*/
+        /* 만약 스타일이 중복된다면 
+        우선순위는 맨 아래 이므로 순서 잘 짜기 */
+        a:visited {
+            color: violet;
+        }
+
+        a:hover {
+            color: red;
+        }
+
+        a:active {
+            background-color: blue;
+        }
+
+        input:focus {
+            background-color: red;
+        }
+
+        input:hover {
+            background-color: yellow;
+        }
+
+        input:checked+span {
+            /* 선택이 되면 빨간색 */
+            color: red;
+        }
+        input[type='checkbox']:checked+span {
+            color: blue;
+        }
+
+        input:
+    </style>
+</head>
+
+<body>
+    <a href="http://www.daum.net">Daum</a><br>
+    <input type="text" name="" id="" placeholder="focus me">
+    <br>
+    <input type="radio" name="gender" id=""> <span>Male</span><br>
+    <input type="radio" name="gender" id=""> <span>Female</span><br>
+    <input type="radio" name="gender" id=""> <span>Neuter</span><br>
+
+    <input type="checkbox" name="" id=""><span>자전거</span><br>
+    <input type="checkbox" name="" id=""><span>자동차</span><br>
+    <input type="checkbox" name="" id=""><span>모터사이클</span>
+</body>
+
+</html>

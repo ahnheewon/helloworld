@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page147(url.html)</title>
+    <style>
+
+        h3 {
+            text-align: center;
+            background-color: blueviolet;
+            color : white;
+        }
+
+        form {
+            border: 3px dotted violet;
+            padding: 20px;
+            width: 55%;
+            margin: auto;  /* 좌우여백 동일하게 맞춰줌.*/
+        }
+        fieldset {
+            padding: 10px;
+        }
+        ul {
+            list-style-type: none;  /* list 점 안보이게 */
+            
+        }
+        label {
+            width: 150px; /* 인라인이라서 적용해도 안보임*/
+            display: inline-block; 
+            padding-right: 5px;
+        }
+
+       div {
+        text-align: center;
+       }
+       input[type='submit'] {
+        width: 50%;
+       }
+       input[type='date'] {
+        width: 32.2%;
+       }
+
+    </style>
+</head>
+
+<body>
+    <form>
+        <h3>회원가입</h3>
+    <fieldset>
+        <legend>로그인 정보</legend>
+
+            <ul>
+                <li>
+                    <label for="id">아이디</label>
+                    <input type="text" name="id" id="id"  required>
+                    <br></li>
+                <li>
+                    <label for="password">비밀번호 </label>
+                    <input type="password" name="pw" id="pw"  required>
+                    <br></li>
+                <li>
+                    <label for="password2">비밀번호 확인 </label>
+                    <input type="password" name="pw2" id="pw2"  required>
+                    <br></li>
+            </ul>
+
+    </fieldset>
+
+    <fieldset>
+        <legend>개인 정보</legend>
+            <ul>
+                <li>
+                    <label for="name">이름 </label>
+                    <input type="text" name="name" id="name" required>
+                    <br>
+                <li>
+                <label for="admin">메일 주소</label>
+                <input type="email" name="mail" id="mail"  required>
+                <br></li>
+                <li>
+                    <label for="tel">연락처</label>
+                    <input type="tel" name="phone" id="phone"  required>
+                    <br></li>
+                <li>
+                    <label for="user">블로그/홈페이지</label>
+                    <input type="url" name="blog" id="blog">
+                    <br></li>
+
+                    <li>
+                        <label for="user">생년월일</label>
+                        <input type="date" name="birth" id="birth">
+                        <br></li>
+            </ul>
+        </fieldset>
+        <br>
+        <div>
+        <input type="submit" value="가입하기">
+    </div>
+    </form>
+</body>
+
+</html>
