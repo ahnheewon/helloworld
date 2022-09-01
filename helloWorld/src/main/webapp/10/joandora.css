@@ -1,6 +1,7 @@
 /* joandora.css */
 * {
     box-sizing: border-box;
+    font-family: "Malgun Gothic", "굴림", "Gulim", "Arial";
 }
 
 body {
@@ -45,7 +46,7 @@ header h2 {
 
 .navi {
     height: 60px;
-    background-color: black;
+    
     position: relative;
     top: -15px;
     bottom: -15px;
@@ -54,6 +55,7 @@ header h2 {
 }
 
 .navi ul {
+    margin-color: black;
     list-style-type: none;
     margin-left: 21%; 
 }

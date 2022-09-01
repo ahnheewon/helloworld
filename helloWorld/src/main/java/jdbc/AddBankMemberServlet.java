@@ -52,8 +52,17 @@ public class AddBankMemberServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		doGet(request, response);
+		
+		String id = request.getParameter("del_id");
+		
+		MemberManage dao = MemberManage.getInstance();
+		if(dao.delMember(id)) {
+			response.getWriter().print("success");
+		}else {
+			response.getWriter().print("fail");
+			
+		}
+		
 	}
 
 }

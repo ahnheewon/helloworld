@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>javascript/ajax.html</title>
+</head>
+
+<body>
+
+	<div id="show">
+		<table border="1">
+			<thead>
+				<tr>
+					<th>아이디</th>
+					<th>이름</th>
+					<th>비밀번호</th>
+				</tr>
+			</thead>
+			<tbody id="list">
+			</tbody>
+		</table>
+	</div>
+
+	<script>
+        // 서버상에 있는 html, jsp, 서블릿.
+        let xhtp = new XMLHttpRequest();
+        xhtp.open('get', '../memberList');
+        xhtp.send(); // 서버요청
+        xhtp.onload=function() {
+            let data= JSON.parse(xhtp.response);
+            
+            console.log(data);
+            let list = document.getElementById('list');
+            
+            data.forEach(data => {
+
+            let tr = document.createElement('tr');
+            
+            let td1 = document.createElement('td');
+            let txt1 = document.createTextNode(data.memberId);
+            td1.appendChild(txt1); // id
+            
+         
+            let td2 = document.createElement('td');
+            let txt2 = document.createTextNode(data.memberName);
+            td2.appendChild(txt2); // name
+            
+            let td3 = document.createElement('td');
+            let txt3 = document.createTextNode(data.memberPw);
+            td3.appendChild(txt3); // pw
+            
+            let td4 = document.createElement('td');
+            let btn = document.createElement('button');
+            
+            
+            	//삭제 이벤트 : ajax 호출.
+            btn.addEventListsner('click',function() { 
+            	
+				let delAjax = new XMLHttpRequest();
+				delAjax.open('post','../memberList');
+				delAjax.setRequestHeader('Content-type','application/x-www-form-urlencoded');
+				delAjax.send('del-id='+this.parentElement.parentElement.firstElementChild.textContent);
+				//del_id= 매우 중요, 안맞으면 값을 못가져옴.
+				// this는 btn을 의미합니다.
+				
+				delAjax.onload= function(e){
+					let result=delAjax.responseText;
+					console.log(result);
+					if(result == 'success') {
+						e.parentElement.parentElement.remove();
+						
+					} else {
+						alert('처리중 에러발생');
+					}
+					
+				}
+            	
+            });
+            
+            let txt4 = document.createTextNode('삭제');
+            btn.append(txt4);
+            td4.append(btn);
+  
+            tr.append(td1,td2,td3,td4); // appendChild는 다수 감싸기 사용불가능.
+        
+        	list.append(tr);
+            
+            });
+            }
+    </script>
+
+</body>
+
+</html>

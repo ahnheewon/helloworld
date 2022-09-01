@@ -1,0 +1,175 @@
+/*안희원.css*/
+
+* {
+    box-sizing: border-box;
+}
+
+#container {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+  }
+
+  .navi ul li :visited {
+    color: white;
+  }
+.navi {
+    background-color: black;
+    clear: both;
+    padding: 10px 0;
+}
+
+.navi ul {
+    margin: 0;
+}
+
+.navi ul li {
+    display: inline-block;
+    color: white;
+
+}
+
+.navi ul :hover {
+    background-color: pink;
+    color: black
+}
+
+.login {
+    text-align: end
+}
+
+.sidebar-left {
+    padding: 0px;
+    float: left;
+    width: 200px;
+    height: 700px;
+    background-color: pink;
+
+
+}
+
+.sidebar-left ul {
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px 0;
+}
+
+.sidebar-left ul li {
+    font-size: small;
+    text-align: center;
+    font-weight: lighter;
+    list-style-type: none;
+    padding: 5px 0;
+}
+
+.content {
+    text-align: center;
+    float: left;
+    width: 600px;
+    height: 700px;
+    padding: 10px;
+}
+
+.sidebar-right {
+    float: left;
+    width: 200px;
+    height: 700px;
+    background-color: pink;
+
+}
+
+.sidebar-right ul {
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px 0;
+}
+
+.sidebar-right ul li {
+    font-size: small;
+    text-align: center;
+    font-weight: lighter;
+    list-style-type: none;
+    padding: 5px 0;
+}
+
+fieldset {
+    border: none;
+}
+
+fieldset form {
+    width: 500px;
+    margin: 0 auto;
+}
+
+#f1 {
+    background-color: gray;
+    margin: 0;
+    padding-top: 0px;
+}
+
+#f2 {
+    background-color: gray;
+    margin: 0;
+}
+
+#l1 {
+    font-weight: bold;
+    font-size: large;
+    padding: 10px;
+
+}
+
+#l2 {
+    font-weight: bold;
+    font-size: medium;
+    padding: 10px;
+    padding-top: 0px;
+}
+
+#l3 {
+    font-weight: lighter;
+    font-size: small;
+    text-align: center;
+}
+
+label {
+    width: 130px;
+    display: inline-block;
+}
+
+form ul li {
+    border-radius: 5px;
+    border-style: solid white;
+    background-color: rgba(255, 255, 255, 0.543);
+    list-style-type: none;
+    padding: 10px 0;
+}
+
+input {
+    width: 250px;
+    padding: 3px;
+}
+
+button {
+    width: 150px;
+    border-style: none;
+    background-color: rgb(#ddd);
+    padding: 15px;
+}
+
+footer {
+    background-color: burlywood;
+    text-align: center;
+    clear: both;
+    padding: 10px 0;
+}
+
