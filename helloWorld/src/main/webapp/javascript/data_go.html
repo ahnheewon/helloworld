@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing:border-box;
+        }
+
+        table{
+            width: 70%;
+            float: left;
+            border: 1px solid green;
+        }
+
+        #list>tr>td:hover{
+            color: red;
+         }
+
+        div#detailInfo{
+            width: 30%;
+            float: left;
+            border: 1px solid green;
+            height: 300px;
+        
+        }
+
+        div#piechart {
+            clear: both;
+        }
+  
+    </style>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+
+<body>
+    <h3>예방접종센터 조회</h3>
+    <label for = "center">조회대상입력: <input type="text" name="center" id="center"></label>
+    <button id = "searchBtn">조회</button>
+
+    <label for = '' >시도리스트: 
+        <select id="sido">
+            <option>선택</option>
+        </select>
+    </label>
+    <br><br>
+    <table border = "1">
+        <thead>
+            <th>시설아이디</th>
+            <th>센터명</th>
+            <th>시도</th>
+            <th>시군구</th>
+            <th>연락처</th>
+            <th>주소</th>
+        </thead>
+        <tbody id= "list"></tbody>
+    </table>
+    <div id ="detailInfo">
+        <ul>
+            <li>org:<span>국립중앙의료원</span></li>
+            <li>lat:<span>12.34567</span></li>
+            <li>lng:<span>123.2324</span></li>
+        </ul>
+    </div>
+
+    <div id="piechart" width="900px" height="700px"></div>
+
+
+    <script>    
+
+        //조회클릭
+        document.getElementById('searchBtn').addEventListener('click',searchCenterFnc);
+       
+        //리스트 조회
+        document.getElementById('sido').addEventListener('change',searchCenterFnc);
+
+        //화면 초기화
+        let gdata;
+        
+        //
+        let req_url = `https://api.odcloud.kr/api/15077586/v1/centers?page=1&perPage=284&returnType=json&serviceKey=6EXN5TLmC9leLe9M9pyhLXMLLdra6iDiCG9UX8q1ZJI9HCdBFVTdmE32AltYmIvhaMBLLHcPACIaldZ1jt2SZQ%3D%3D`;
+        let xhtp = new XMLHttpRequest();
+        xhtp.open('get',req_url);
+        xhtp.send();
+        xhtp.onload = pageLoadCallBack;
+
+        ////// 화면 로딩되면서 나오는 부분 
+
+
+        //함수들
+        function pageLoadCallBack(){
+            let result = JSON.parse(this.responseText);
+            console.log(result);
+
+            let tbody = document.getElementById('list');
+            
+            // 결과중에 result.data가 필요한 실 데이터
+            let data = result.data;
+            console.log(data);
+            gdata = data;
+
+
+            //시도리스트를 만들어주기 위해
+            let sidoData = [];      
+            let chartData = [];  // [['서울특별시',3],['대전광역시',2],['경기도',3],[]]
+
+
+            data.forEach((center,idx)=> {
+                //초기화면. 10개만 보여주
+                if(idx < 10)
+                tbody.append(makeTr(center));
+
+                //시도데이터 구분
+                if(sidoData.indexOf(center.sido) == -1) {
+                    sidoData.push(center.sido); 
+                }
+
+                // 차트에 들어갈 데이터 구분.
+                // 시도(서울특별시, 대전광역시) chartData.push(['서울특별시',1])
+                let dChart=chartData.find(chart => chart[0]==center.sido);
+                // 같은게 있으면 값을 넘겨준다.
+                // 없으면 undefined
+                if(dChart) { // 값이 있으면 조회를 하고
+                    dChart[1]++; //두번째 값 증가
+                } else { // 값이 없으면...
+                    chartData.push([center.sido,1])
+                 } // 새로 등록
+                   
+            });
+            
+            console.log(chartData);
+            makeChart();
+
+            // select에 option 달아주기
+            let sel = document.getElementById('sido');
+            sidoData.forEach(sido => {
+                let opt = document.createElement('option');     // select 하위로 option
+                opt.textContent = sido;
+                opt.value = sido;
+                sel.append(opt);
+                
+            });
+
+            function makeChart(){
+            google.charts.load('current', {
+            'packages':['corechart']
+            });
+            google.charts.setOnLoadCallback(drawChart);
+
+            function drawChart() {
+
+            // let chartData =[
+            // ['Task', 'Hours per Day'], //헤더
+            // ['Work', 11],
+            // ['Eat', 2],
+            // ['Commute', 2],
+            // ['Watch TV', 2],
+            // ['Sleep', 7]
+            // ];
+
+            chartData.unshift('시도','건수');
+            var data = google.visualization.arrayToDataTable(chartData);
+
+            var options = {
+            title: '코로나19 시도 현황'
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+            chart.draw(data, options);
+            }
+            }
+            } // end of pageLoadCallback();
+
+
+
+        
+        //조회 
+        function makeTr(center){
+            let tr = document.createElement('tr');
+            //보여줄 항목을 배열로
+            let infos = ['id','centerName','sido','sigungu','phoneNumber','address'];  
+            infos.forEach(info =>{
+                let td = document.createElement('td');
+                let txt = document.createTextNode(center[info]);
+                td.append(txt);
+                tr.append(td);
+    
+            })
+            return tr;
+        }
+
+        function searchCenterFnc(e){
+            console.log(e.target.nodeName);
+                
+            let sido;
+
+                if(e.target.nodeName == 'BUTTON'){
+                    sido = document.getElementById('center').value;     // 조회하려는 시도.
+                } else if (e.target.nodeName == 'SELECT'){
+                    sido = e.target.value;
+                }
+
+            let tbody = document.getElementById('list');
+
+            // 이미 있던 tr 삭제 (보여주고 있던 리스트 지우고 조회 결과만 나오도록)
+            document.querySelectorAll('#list>tr').forEach(tr => tr.remove());
+
+            // 추가로 
+            gdata.forEach(center => {
+
+                if(center.sido.startsWith(sido)){
+                    tbody.append(makeTr(center));       // 조회된 시도.
+                }
+            });
+        }
+   
+   
+   
+   
+   </script>
+</body>
+</html>

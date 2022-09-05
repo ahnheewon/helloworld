@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class MemberListServlet
  */
-@WebServlet({ "/memberList" })
+@WebServlet({"/memberList" })
 public class MemberListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -51,14 +51,17 @@ public class MemberListServlet extends HttpServlet {
 		response.getWriter().print(json); // 웹페이지에 json 형태 데이터를 그려줌.
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		String id = request.getParameter("del_id");
+
+		MemberManage dao = MemberManage.getInstance();
+		if (dao.delMember(id)) {
+			response.getWriter().print("success");
+		} else {
+			response.getWriter().print("fail");
+		}
 	}
 
 }
